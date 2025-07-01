@@ -24,6 +24,7 @@ Identify and define the six most essential visualizations that will empower fash
 #### 🔹 1. 📈 Daily & Weekly Sales Trend – Line Chart
 
 🎯 **Purpose:** Monitor and compare daily/weekly revenue performance to identify seasonality, dip patterns, and campaign impact.
+
 💼 **Business Value:**
 
 * Reveal high-performing days (e.g., weekend spikes)
@@ -55,6 +56,7 @@ ORDER BY sale_date;
 #### 🔹 2. 🧵 Product Category/Style Performance – Grouped Bar Chart
 
 🎯 **Purpose:** Analyze which product categories, styles, and trends are selling best across the store or chain — with the ability to segment by brand and trend.
+
 💼 **Business Value:**
 
 * Focus promotions on high-performing styles and trends
@@ -84,6 +86,7 @@ GROUP BY brand, trend, category;
 #### 🔹 3. 📦 Inventory Aging – Heatmap or Bar Chart
 
 🎯 **Purpose:** Track how long inventory items remain unsold.
+
 💼 **Business Value:**
 
 * Avoid dead stock
@@ -125,6 +128,7 @@ GROUP BY brand, trend, age_bracket;
 #### 🔹 4. 📏 Size Sell-Through Rate – Stacked Bar or Pie Chart
 
 🎯 **Purpose:** See which sizes sell fast and which are overstocked, filtered by trend and brand.
+
 💼 **Business Value:**
 
 * Adjust future purchase ratios
@@ -162,6 +166,7 @@ GROUP BY brand, trend, size;
 #### 🔹 5. 🔄 Return Reasons Breakdown – Pie or Bar Chart
 
 🎯 **Purpose:** Understand why customers are returning items based on the associated brand/trend.
+
 💼 **Business Value:**
 
 * Fix design/sizing/quality issues
