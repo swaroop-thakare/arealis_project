@@ -3,35 +3,35 @@ Category Intelligence & Interactive Sales Dashboard
 ## Fashion Retail Dashboard Readme
 
 
-### 🧠 GOAL:
+###  GOAL:
 
 Show how the data (after ingestion and cleaning) should be presented to end-users in the form of a dashboard that helps them make smart decisions in fashion retail.
 
 ---
 
-### 🚨 Problem Area:
+###  Problem Area:
 
 **Blind Retail Decisions Due to No Analytics Access**
 Fashion retail managers or business owners are making important business decisions without seeing any data — or without understanding what the data is telling them. They are effectively "flying blind."
 
 ---
 
-### ✅ TASK 1: Pick 6 Core Visualizations Fashion Businesses Absolutely Need
+###  TASK 1: Pick 6 Core Visualizations Fashion Businesses Absolutely Need
 
 **Objective:**
 Identify and define the six most essential visualizations that will empower fashion retailers to make informed, data-driven decisions and overcome the challenge of blind decision-making due to lack of analytics access.
 
-#### 🔹 1. 📈 Daily & Weekly Sales Trend – Line Chart
+####  1.  Daily & Weekly Sales Trend – Line Chart
 
-🎯 **Purpose:** Monitor and compare daily/weekly revenue performance to identify seasonality, dip patterns, and campaign impact.
+ **Purpose:** Monitor and compare daily/weekly revenue performance to identify seasonality, dip patterns, and campaign impact.
 
-💼 **Business Value:**
+ **Business Value:**
 
 * Reveal high-performing days (e.g., weekend spikes)
 * Optimize ad timing and staff rosters
 * Predict sales curves over time (with AI forecasting layer)
 
-📊 **Example Output:**
+ **Example Output:**
 A line chart with the X-axis as calendar days (e.g., June 1 to June 30) and the Y-axis showing revenue (₹). Sample data:
 
 * June 01 (Mon): ₹12,500
@@ -39,7 +39,7 @@ A line chart with the X-axis as calendar days (e.g., June 1 to June 30) and the 
 * June 03 (Wed): ₹9,300
 * June 07 (Sun): ₹21,500  ⟶ Highest peak
 
-🧠 **Logic:**
+ **Logic:**
 
 ```sql
 SELECT 
@@ -53,23 +53,23 @@ ORDER BY sale_date;
 
 ---
 
-#### 🔹 2. 🧵 Product Category/Style Performance – Grouped Bar Chart
+####  2.  Product Category/Style Performance – Grouped Bar Chart
 
-🎯 **Purpose:** Analyze which product categories, styles, and trends are selling best across the store or chain — with the ability to segment by brand and trend.
+ **Purpose:** Analyze which product categories, styles, and trends are selling best across the store or chain — with the ability to segment by brand and trend.
 
-💼 **Business Value:**
+ **Business Value:**
 
 * Focus promotions on high-performing styles and trends
 * Guide inventory decisions per brand-trend combinations
 * Identify category leaders within seasonal or generational fashion trends
 
-📊 **Example Output:**
+ **Example Output:**
 Grouped bar chart where each group represents a product category (e.g., Denim, Ethnic, Athleisure). Each bar in a group is a brand:
 
 * Denim: Levi’s (500), Zara (450), H\&M (300)
 * Ethnic: BIBA (600), FabIndia (420), Global Desi (390)
 
-🧠 **Logic:**
+ **Logic:**
 
 ```sql
 SELECT 
@@ -83,17 +83,17 @@ GROUP BY brand, trend, category;
 
 ---
 
-#### 🔹 3. 📦 Inventory Aging – Heatmap or Bar Chart
+####  3.  Inventory Aging – Heatmap or Bar Chart
 
-🎯 **Purpose:** Track how long inventory items remain unsold.
+ **Purpose:** Track how long inventory items remain unsold.
 
-💼 **Business Value:**
+**Business Value:**
 
 * Avoid dead stock
 * Optimize markdown planning
 * Refresh slow-moving styles based on trend & brand
 
-📊 **Example Output:**
+ **Example Output:**
 A heatmap showing brands as rows and time brackets as columns:
 
 * Zara:
@@ -107,7 +107,7 @@ A heatmap showing brands as rows and time brackets as columns:
   * 31–60 days: 40 units
   * 61+ days: 300 units  ⟶ highlighted in red (slow moving)
 
-🧠 **Logic:**
+ **Logic:**
 
 ```sql
 SELECT 
@@ -125,17 +125,17 @@ GROUP BY brand, trend, age_bracket;
 
 ---
 
-#### 🔹 4. 📏 Size Sell-Through Rate – Stacked Bar or Pie Chart
+#### 🔹 4.  Size Sell-Through Rate – Stacked Bar or Pie Chart
 
-🎯 **Purpose:** See which sizes sell fast and which are overstocked, filtered by trend and brand.
+ **Purpose:** See which sizes sell fast and which are overstocked, filtered by trend and brand.
 
-💼 **Business Value:**
+ **Business Value:**
 
 * Adjust future purchase ratios
 * Align stocking with customer demand by trend
 * Reduce excess inventory on slow-moving sizes
 
-📊 **Example Output:**
+**Example Output:**
 Stacked bar chart per product:
 
 * Product: Men’s Shirt (Brand: U.S. Polo, Trend: Formal)
@@ -147,7 +147,7 @@ Stacked bar chart per product:
   * XL: 30%
     Colors indicate sell-through percentage; low-performing sizes marked in red.
 
-🧠 **Logic:**
+**Logic:**
 
 ```sql
 SELECT 
@@ -163,17 +163,17 @@ GROUP BY brand, trend, size;
 
 ---
 
-#### 🔹 5. 🔄 Return Reasons Breakdown – Pie or Bar Chart
+####  5.  Return Reasons Breakdown – Pie or Bar Chart
 
-🎯 **Purpose:** Understand why customers are returning items based on the associated brand/trend.
+**Purpose:** Understand why customers are returning items based on the associated brand/trend.
 
-💼 **Business Value:**
+**Business Value:**
 
 * Fix design/sizing/quality issues
 * Minimize future returns through feedback
 * Compare return patterns across trends
 
-📊 **Example Output:**
+**Example Output:**
 Pie chart with return reasons:
 
 * Fit Issue – 42%
@@ -183,7 +183,7 @@ Pie chart with return reasons:
 * Others – 7%
   Bar view also shows brand-wise breakdown of top return reasons.
 
-🧠 **Logic:**
+ **Logic:**
 
 ```sql
 SELECT 
@@ -243,4 +243,4 @@ GROUP BY brand, trend, reason;
 **In short:**  
 A good dashboard should be fast, flexible, easy to use, always up-to-date, and ready to grow with your business. Building one like this takes careful planning and the right tools.
 
-[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/32742474/1dc712d5-0edc-4100-9e59-b9933b0dd8ad/Retailnova-Dashboard.docx
+
