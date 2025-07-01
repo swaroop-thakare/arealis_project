@@ -125,7 +125,7 @@ GROUP BY brand, trend, age_bracket;
 
 ---
 
-#### 🔹 4.  Size Sell-Through Rate – Stacked Bar or Pie Chart
+####  4.  Size Sell-Through Rate – Stacked Bar or Pie Chart
 
  **Purpose:** See which sizes sell fast and which are overstocked, filtered by trend and brand.
 
@@ -193,7 +193,63 @@ SELECT
   COUNT(*) AS return_count
 FROM returns
 GROUP BY brand, trend, reason;
+
 ```
+
+6.  Foot Traffic & Hourly Sales Heatmap – Store-Level Grid
+ Purpose: Understand which hours and days see the most customer visits or sales at each store.
+
+Business Value:
+
+Optimize store staffing and promotional timing
+
+Detect peak and off-peak hours
+
+Support store layout planning and event scheduling
+
+Compare footfall vs. actual conversions
+
+Example Output:
+A heatmap grid where:
+
+Rows = Days of the week (Mon to Sun)
+
+Columns = Hours (e.g., 10 AM to 9 PM)
+
+Cell Color = Sales or visitor count intensity
+
+Example (for a Zara Store):
+
+10 AM	11 AM	12 PM	1 PM	2 PM	...	8 PM
+Monday	20	30	40	45	25	...	15
+Tuesday	15	22	35	50	28	...	20
+...	...	...	...	...	...	...	...
+Sunday	30	45	70	90	85	...	60
+
+Color intensity increases with footfall/sales.
+ Logic:
+
+Input Table: sales or foot_traffic
+Group by: DAYOFWEEK(sale_datetime), HOUR(sale_datetime)
+Aggregate: SUM(amount) or COUNT(*) (for transactions)
+
+sql
+Copy
+Edit
+SELECT 
+  DAYNAME(sale_datetime) AS sale_day,
+  HOUR(sale_datetime) AS sale_hour,
+  COUNT(*) AS transaction_count,
+  SUM(amount) AS total_sales
+FROM sales
+GROUP BY sale_day, sale_hour
+ORDER BY FIELD(sale_day, 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'), sale_hour;
+
+Scalability:
+
+Add filters for store_id, brand, or trend
+
+Use foot_traffic sensor data if available for more precise visitor count
 
 ---
 
